@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ledger — a to-do list</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="ledger">
+    <header class="ledger__header">
+      <p class="ledger__eyebrow">Today's ledger</p>
+      <h1 class="ledger__title">What needs doing</h1>
+    </header>
+
+    <form id="task-form" class="entry-row">
+      <input
+        type="text"
+        id="task-input"
+        class="entry-row__input"
+        placeholder="Add an entry…"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" class="entry-row__button">Add</button>
+    </form>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <p id="empty-state" class="empty-state">Nothing on the books. Add your first entry above.</p>
+
+    <footer class="ledger__footer">
+      <span id="task-count">0 open</span>
+      <button id="clear-done" class="ledger__clear">Clear completed</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

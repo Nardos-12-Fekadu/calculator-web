@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@500;600&display=swap');
 
 :root {
-  --case: #232323;
-  --case-edge: #2f2f2f;
-  --screen-bg: #0d1810;
-  --screen-glow: #8fffb0;
-  --key-num-bg: #e8e4da;
-  --key-num-fg: #232323;
-  --key-op-bg: #454f59;
-  --key-op-fg: #eceff1;
+  --case: #fdeef2;
+  --case-edge: #ffffff;
+  --screen-bg: #fff5f8;
+  --screen-glow: #d6336c;
+  --key-num-bg: #ffffff;
+  --key-num-fg: #4a2a35;
+  --key-op-bg: #f6c9da;
+  --key-op-fg: #6b2140;
   --key-eq-bg: #e85d9c;   /* pink accent */
-  --key-eq-fg: #2a0a18;
-  --key-clear-bg: #7a3b3b;
-  --key-clear-fg: #f4e8e8;
+  --key-eq-fg: #ffffff;
+  --key-clear-bg: #f7a8c4;
+  --key-clear-fg: #5c1c34;
 }
-<button class="clear" data-action="clear" style="grid-column: span 2;">AC</button>
+
 * { box-sizing: border-box; }
 
 html, body {
@@ -23,7 +23,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 20%, #3a3a3a, #161616 75%);
+  background: radial-gradient(circle at 50% 20%, #ffe3ec, #ffc9dd 75%);
   font-family: 'Inter', sans-serif;
 }
 
@@ -33,9 +33,9 @@ html, body {
   border-radius: 22px;
   padding: 22px;
   box-shadow:
-    0 30px 60px -20px rgba(0,0,0,0.7),
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    inset 0 -2px 4px rgba(0,0,0,0.5);
+    0 30px 60px -20px rgba(214,51,108,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -2px 4px rgba(214,51,108,0.08);
 }
 
 .brand {
@@ -43,13 +43,13 @@ html, body {
   justify-content: space-between;
   align-items: baseline;
   padding: 2px 6px 14px;
-  color: #7a7a7a;
+  color: #b05678;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.brand span:last-child { color: #4a4a4a; }
+.brand span:last-child { color: #d68aa8; }
 
 .screen {
   position: relative;
@@ -58,8 +58,8 @@ html, body {
   padding: 22px 18px 16px;
   margin-bottom: 18px;
   box-shadow:
-    inset 0 2px 10px rgba(0,0,0,0.8),
-    inset 0 0 30px rgba(232,93,156,0.05);
+    inset 0 2px 10px rgba(214,51,108,0.12),
+    inset 0 0 30px rgba(232,93,156,0.06);
   overflow: hidden;
 }
 
@@ -69,8 +69,8 @@ html, body {
   inset: 0;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0,0,0,0.15) 0px,
-    rgba(0,0,0,0.15) 1px,
+    rgba(214,51,108,0.03) 0px,
+    rgba(214,51,108,0.03) 1px,
     transparent 1px,
     transparent 3px
   );
@@ -81,7 +81,7 @@ html, body {
   min-height: 18px;
   font-family: 'Space Mono', monospace;
   font-size: 14px;
-  color: rgba(143,255,176,0.45);
+  color: rgba(214,51,108,0.45);
   text-align: right;
   letter-spacing: 0.03em;
   white-space: nowrap;
@@ -96,7 +96,7 @@ html, body {
   font-size: 42px;
   color: var(--screen-glow);
   text-align: right;
-  text-shadow: 0 0 12px rgba(143,255,176,0.55), 0 0 2px rgba(143,255,176,0.8);
+  text-shadow: 0 0 10px rgba(214,51,108,0.25);
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: none;

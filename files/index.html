@@ -3,38 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ledger — a to-do list</title>
+  <title>Bloom — a task list</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <main class="ledger">
-    <header class="ledger__header">
-      <p class="ledger__eyebrow">Today's ledger</p>
-      <h1 class="ledger__title">What needs doing</h1>
+  <main class="board">
+    <header class="board__header">
+      <div class="board__heading">
+        <p class="board__eyebrow">Task list</p>
+        <h1 class="board__title">Bloom</h1>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-toggle__icon">🌙</span>
+      </button>
     </header>
 
-    <form id="task-form" class="entry-row">
+    <div class="progress" aria-label="Completion progress">
+      <div class="progress__track">
+        <div id="progress-fill" class="progress__fill"></div>
+      </div>
+      <span id="progress-label" class="progress__label">0 of 0 done</span>
+    </div>
+
+    <form id="task-form" class="entry">
+      <div class="entry__row">
+        <input
+          type="text"
+          id="task-input"
+          class="entry__input"
+          placeholder="What needs doing?"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="entry__button">Add</button>
+      </div>
+      <div class="entry__row entry__row--details">
+        <input
+          type="text"
+          id="category-input"
+          class="entry__field"
+          placeholder="Category (e.g. Work)"
+          autocomplete="off"
+          list="category-suggestions"
+        />
+        <datalist id="category-suggestions"></datalist>
+        <select id="priority-input" class="entry__field" aria-label="Priority">
+          <option value="low">Low priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="high">High priority</option>
+        </select>
+        <input
+          type="date"
+          id="due-input"
+          class="entry__field"
+          aria-label="Due date"
+        />
+      </div>
+    </form>
+
+    <div class="toolbar">
       <input
         type="text"
-        id="task-input"
-        class="entry-row__input"
-        placeholder="Add an entry…"
+        id="search-input"
+        class="toolbar__search"
+        placeholder="Search…"
         autocomplete="off"
-        required
       />
-      <button type="submit" class="entry-row__button">Add</button>
-    </form>
+      <select id="filter-select" class="toolbar__filter" aria-label="Filter tasks">
+        <option value="all">All</option>
+        <option value="open">Open</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
 
     <ul id="task-list" class="task-list"></ul>
 
-    <p id="empty-state" class="empty-state">Nothing on the books. Add your first entry above.</p>
+    <p id="empty-state" class="empty-state">Nothing here yet — add your first task above.</p>
 
-    <footer class="ledger__footer">
+    <footer class="board__footer">
       <span id="task-count">0 open</span>
-      <button id="clear-done" class="ledger__clear">Clear completed</button>
+      <button id="clear-done" class="board__clear">Clear completed</button>
     </footer>
   </main>
+
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>
